@@ -2,7 +2,9 @@ const btnBackProject = document.getElementById("btn-back-project");
 const backToSection = document.getElementById("back-to-section");
 const containerStandTwo = document.querySelectorAll(".container-stand-two");
 const inputPledge = document.querySelectorAll(".radio-pledge");
-
+const containerEnterPledge = document.querySelectorAll(
+  ".container-enter-pledge"
+);
 // Visible "Back this project"
 
 btnBackProject.addEventListener("click", () => {
@@ -26,9 +28,7 @@ containerStandTwo.forEach((element, index) => {
   });
 });
 
-const containerEnterPledge = document.querySelectorAll(
-  ".container-enter-pledge"
-);
+// Abrir a opção de doação
 
 containerStandTwo.forEach((element, index) => {
   element.addEventListener("click", () => {
@@ -44,6 +44,24 @@ containerStandTwo.forEach((element, index) => {
     }
     if (index !== 3) {
       containerEnterPledge[index].hidden = false;
+    }
+  });
+});
+
+const btnContinue = document.querySelectorAll(".btn-continue");
+const thanksSuport = document.getElementById("thanks-suport");
+const cashInputPledge = document.getElementById("input-pledge");
+console.log(cashInputPledge);
+btnContinue.forEach((element, index) => {
+  element.addEventListener("click", () => {
+    if (index === 1 || index === 2 || index === 3) {
+      backToSection.style.display = "none";
+      thanksSuport.style.display = "flex";
+    } else if (index === 0) {
+      if (cashInputPledge.value !== "") {
+        backToSection.style.display = "none";
+        thanksSuport.style.display = "flex";
+      }
     }
   });
 });

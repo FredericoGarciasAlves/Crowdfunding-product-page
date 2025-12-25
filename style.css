@@ -1,5 +1,6 @@
 body {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,6 +49,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 12.4rem;
 }
 
 .main .mastercraft-section {
@@ -287,13 +289,12 @@ button {
 
 #back-to-section {
   width: 100vw;
-  min-height: 100%;
-  position: fixed;
+  min-height: 118%;
+  position: absolute;
   background-color: rgba(0, 0, 0, 0.6);
   display: none;
   justify-content: center;
-
-  top: 0px;
+  top: -32rem;
   padding-top: 22rem;
   padding-bottom: 18.5rem;
   z-index: 999;
@@ -457,19 +458,21 @@ button {
   pointer-events: none;
 }
 
-.thanks-suport {
+#thanks-suport {
   position: fixed;
   inset: 0;
   min-height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
-  display: none;
+  display: flex;
   justify-content: center;
+  align-items: center;
   padding-top: 46rem;
+  top: -43rem;
   z-index: 1000;
 }
 
-.container-thanks-suport {
+#container-thanks-suport {
   width: 54rem;
   height: 45rem;
   padding: 4.8rem;
@@ -517,4 +520,15 @@ button {
 }
 input:disabled {
   cursor: not-allowed;
+}
+
+.btn-got-it {
+  width: 10.8rem;
+  height: 5rem;
+  border-radius: 15rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  border: none;
+  background-color: var(--green-400);
+  color: var(--white);
 }
